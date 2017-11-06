@@ -1,0 +1,2 @@
+ a = document.all.div1.offsetWidth;
+width = document.getElementById(???).style.offsetWidth;

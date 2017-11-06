@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+#content{
+    width: 50px;
+    height: 30px;
+    background-color: red;
+    position: relative;
+    left: 100px;
+    top: 100px;
+}
+    </style>
+</head>
+<body>
+<div id="block">
+    <div id="content"></div>
+    <button id="btn1">按钮1</button>
+    <button id="btn2">按钮2</button>
+</div>
+<script>
+    var block = document.getElementById("block");
+    var content = document.getElementById("content");
+    var btn1 = document.getElementById("btn1");
+    var btn2 = document.getElementById("btn2");
+    var width = content.offsetWidth;
+    var timer;
+    alert(width);
+    function add() {
+        if(width<500){
+            width = width + 5;
+            content.style.width = width +'px';
+        }
+    }
+
+    function subtract() {
+        if(width>0){
+            width = width - 5;
+            content.style.width = width +'px';
+        }
+    }
+
+    btn1.onclick = function () {
+        var timer = setInterval(add,15);
+
+        setInterval(function () {
+            clearInterval(timer);
+        },1500)      //这里的500很关键，是在if语句了的限制条件width<500
+                    //对应来说只要第46行代码里改成15，后面相应由500改成1500
+                    //这里15的单位和1500单位不一样
+
+    }
+
+    btn2.onclick = function () {
+        var timer = setInterval(subtract,15);
+        setInterval(function () {
+            clearInterval(timer);
+        },1500)      //这里的500很关键，是在if语句了的限制条件width<500
+
+    }
+</script>
+</body>
+</html>

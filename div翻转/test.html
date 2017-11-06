@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .flip-container {
+            perspective: 1000px;
+            transform-style: preserve-3d;
+            transform: rotateX(0deg);
+        }
+        .flip-container, .front{
+            width: 320px;
+            height: 480px;
+        }
+        .flipper {
+            transition: 0.6s;
+            transform-style: preserve-3d;
+            position: relative;
+        }
+        .front {
+            backface-visibility: hidden;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+    </style>
+</head>
+<body>
+<button id="btn1">按钮1</button>
+<button id="btn2">按钮2</button>
+<div class="flip-container">
+    <div class="flipper">
+        <div class="front">
+            <!-- 前面内容 -->
+            <img src="BgPic2.jpg" alt="">
+        </div>
+    </div>
+</div>
+<script>
+    var btn1 = document.getElementById("btn1");
+    var btn2 = document.getElementById("btn2");
+    var flipContainer = document.getElementsByClassName("flip-container");
+    var transform = flipContainer.style.transform;
+    alert(transform);
+//    function add() {
+//        if (){
+//
+//        }
+//    }
+//
+//    function reduce() {
+//        if (){
+//
+//        }
+//    }
+</script>
+</body>
+</html>

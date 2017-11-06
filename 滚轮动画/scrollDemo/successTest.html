@@ -1,0 +1,88 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>滚动动画</title>
+    <script type="text/javascript" src="http://apps.bdimg.com/libs/jquery/1.9.1/jquery.min.js"></script>
+    <style type="text/css">
+        #outBox{
+            height:1800px;
+            background-color:#999;
+            width:500px;
+            float:left;
+            perspective:600px;
+            transform-style:preserve-3d;
+            overflow:hidden;
+        }
+
+        *{ margin:0px; padding:0px;}
+        .gs{
+            position:relative;
+            top:800px;
+            background-color:#099;
+            left:150px;
+            width:200px;
+            height:150px;
+            transform-style:preserve-3d;
+        }
+        .img_3d{
+            transform-style:preserve-3d;
+            animation-iteration-count:infinite;
+            animation-timing-function:ease-in-out;
+        }
+        .xz{
+
+            animation:roate 2s;
+            animation-fill-mode:forwards;
+            animation-direction:alternate;
+        }
+
+        @keyframes roate {
+            0%     { transform:rotateX(0deg); }
+            20%    { transform:rotateX(-30deg); }
+            40%    { transform:rotateX(30deg); }
+            60%    { transform:rotateX(-30deg); }
+            80%    { transform:rotateX(30deg); }
+            100%   { transform:rotateX(0deg); }
+        }
+    </style>
+</head>
+
+<body>
+<script type="text/javascript">
+    function gdjz(div,cssname,offset){
+        var a,b,c,d;
+        d=$(div).offset().top;
+        a=eval(d + offset);
+        b=$(window).scrollTop();
+        c=$(window).height();
+        if(b+c>a){
+            $((div)).addClass((cssname));
+        }
+    }
+
+    $(document).ready(function(e) {
+        $(window).scroll(function(){
+                gdjz("#dh",'xz',500);
+            }
+
+                /*var a,b,c;
+                 a=$("#dh").offset().top;//元素相对于窗口的距离
+                 b=$(window).scrollTop(); //监控窗口已滚动的距离;
+                 c=$(document).height();//整个文档的高度
+                 d=$(window).height();//浏览器窗口的高度*/
+
+                /*if(d+b>a+100){
+                 $("#dh").addClass("xz");
+                 }
+                 */
+        );
+    });
+</script>
+<div id="outBox">
+    <div id="dh" class="gs" >
+        <img class="img_3d" src="http://image.zhangxinxu.com/image/study/p/s200/ps6.jpg" alt="">
+    </div>
+</div>
+</body>
+</html>

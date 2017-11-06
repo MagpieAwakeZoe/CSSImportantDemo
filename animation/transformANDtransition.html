@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>transform和transition结合</title>
+    <style>
+        .trans_effect {
+            width: 100px;
+            height: 100px;
+            position: relative;
+            top: 100px;
+            left: 100px;
+            background-color: red;
+            transition:all 3s ease-in-out;
+        }
+        .trans_effect:hover {
+            transform:rotate(720deg) scale(2,2);
+        }
+    </style>
+</head>
+<body>
+    <div class="trans_effect"></div>
+</body>
+</html>

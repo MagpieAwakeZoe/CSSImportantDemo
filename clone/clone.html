@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="http://code.jquery.com/jquery-latest.js"></script>
+    <style>
+        #div1{
+            position: relative;
+            top: 200px;
+            left: 200px;
+        }
+    </style>
+</head>
+<body>
+    <div id="div1">
+        第一个输入框: <input type="text" class="text1">
+    </div>
+    <script>
+        var input = $(".text1").clone();
+
+        for(var i=0;i<5;i++){
+            $("#div1").append(input);
+        }
+    </script>
+</body>
+</html>

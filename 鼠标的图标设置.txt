@@ -1,0 +1,1 @@
+cursor: url('../../img/cursor1.png'), default;

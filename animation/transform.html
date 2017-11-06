@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>transform的运动的使用</title>
+    <style>
+        .trans_box {
+            display:inline-block;
+            margin:10px;
+            padding:20px 10px;
+            border:1px solid #beceeb;
+            background-color:#f0f3f9;
+        }
+        .trans_skew {  transform: skew(35deg); }
+        .trans_scale {  transform:scale(1,0.5); }
+        .trans_rotate {  transform:rotate(45deg); }
+        .trans_translate {  transform:translate(10px, 20px); }
+        .trans_rotate_skew_scale_translate {
+        transform:skew(30deg) scale(1.1,1.1) rotate(40deg) translate(10px, 20px);
+        }
+    </style>
+</head>
+<body>
+<span class="trans_box trans_skew">transform: skew(35deg);</span><!--值 skew(30deg,20deg) 围绕 X 轴把元素翻转 30 度，围绕 Y 轴翻转 20 度。-->
+<span class="trans_box trans_scale">transform:scale(1,0.5);</span>
+<span class="trans_box trans_rotate">transform:rotate(45deg);</span>
+<span class="trans_box trans_translate">transform:translate(10px, 20px);</span>
+<span class="trans_box trans_rotate_skew_scale_translate">transform:skew(30deg) scale(1.1,1.1) rotate(40deg) translate(10px, 20px);</span>
+</body>
+
+</html>

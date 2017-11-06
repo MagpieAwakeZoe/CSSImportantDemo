@@ -1,0 +1,457 @@
+
+文本
+text-shadow: 5px 5px 5px #FF0000;		//文本阴影
+p {word-wrap:break-word;}			//自动换行
+p {text-indent: 5em;}				//文本缩进
+text-align属性影响文本行之间的对齐方式，它的值分别为left、right、cneter、justify、inherit 
+left、right、cneter分别为左对齐、右对齐、居中对齐； 
+justify为两端对齐； 
+inherit为从父元素继承text-align属性的值。
+
+
+
+
+text-transform					//改变文本的大小写
+none：不做任何改动
+uppercase：全大写
+lowercase：全小写
+capitaliza：每个单词的首字母大写
+
+
+
+
+
+text-decoration			//文本装饰
+none：不做任何改动
+underline：加下划线
+overline：加上划线
+line-through：加贯穿线
+blink：文本闪烁
+
+
+
+
+white-space		处理空白符
+	值		空白符	换行符	自动换行
+normal		合并	忽略	允许
+pre			保留	保留	不允许
+nowrap		保留	忽略	不允许
+pre-wrap	保留	保留	允许
+pre-line	合并	保留	允许
+
+
+
+
+
+///////////////////////////////////////////////////////////////////////////////
+CSS内边距
+h1 {padding: 10px 0.25em 2ex 20%;}
+或者
+h1 {
+  padding-top: 10px;
+  padding-right: 0.25em;
+  padding-bottom: 2ex;
+  padding-left: 20%;
+  }
+padding属性各边的顺序为上、右、下、左。
+
+///////////////////////////////////////////////////////////////////////////////////////////
+边框高度：
+border-width 			//边框指定宽度。 
+p {border-width: 15px 5px 15px 5px;}
+或者
+p {
+  border-top-width: 15px;
+  border-right-width: 5px;
+  border-bottom-width: 15px;
+  border-left-width: 5px;
+  }
+
+  
+  
+  定义单边颜色：
+
+border-top-color
+border-right-color
+border-bottom-color
+border-left-color
+
+
+
+
+/////////////////////////////////////////////////////////////////////////////////////////////
+绝对定位的元素的位置相对于最近的已定位祖先元素，
+如果元素没有已定位的祖先元素，那么它的位置相对于最初的包含块。
+/////////////////////////////////////////////////////////////////////////////////////////////
+
+
+
+
+
+
+/////////////////////////////////////////////////////////////////////////////////////////////
+对于浮动，如果有三个DIV其中第一个DIV未设置浮动第二个设置了左浮动，那么第二个DIV会覆盖第一个DIV
+若三个DIV都设置过了浮动的话那么他们就会并排一行排列。
+/////////////////////////////////////////////////////////////////////////////////////////////
+
+/////////////////////////////////////////////////////////////////////////////////////////////
+多类选择器
+<style type="text/css">
+.important {font-weight:bold;}
+.warning {font-style:italic;}
+.important.warning {background:silver;}
+</style>
+<body>
+<p class="important">This paragraph is very important.</p>
+<p class="warning">This is a warning.</p>
+<p class="important warning">This paragraph is a very important warning.</p>
+<p>This is a paragraph.</p>
+<p>...</p>
+</body>
+/////////////////////////////////////////////////////////////////////////////////////////////
+
+
+
+/////////////////////////////////////////////////////////////////////////////////////////////
+子串匹配属性选择器
+[abc^="def"]	选择 abc 属性值以 "def" 开头的所有元素
+[abc$="def"]	选择 abc 属性值以 "def" 结尾的所有元素
+[abc*="def"]	选择 abc 属性值中包含子串 "def" 的所有元素
+
+a[href*="w3school.com.cn/"]			//选择href属性值中包含子串 "w3school.com.cn/" 的所有元素
+{
+color: red;
+}
+
+
+
+CSS子元素选择器
+h1 > strong {color:red;}		//如果我们希望选择只作为 h1 元素子元素的 strong 元素，可以这样写：
+这个规则会把第一个 h1 下面的两个 strong 元素变为红色，但是第二个 h1 中的 strong 不受影响：
+<h1>This is <strong>very</strong> <strong>very</strong> important.</h1>
+<h1>This is <em>really <strong>very</strong></em> important.</h1>
+
+
+
+
+
+相邻兄弟选择器	//h1 + p {margin-top:50px;}	  //选择紧接在 h1 元素后出现的段落，h1 和 p 元素拥有共同的父元素
+上面规则只会应用到下面html中的紧挨着h1的p标签：
+<h1>This is a heading.</h1>
+<p>这个段落被应用了样式</p>
+<p>这个段落没有被应用样式</p>
+<p>这个段落也没有被应用样式</p>
+
+
+
+
+
+
+
+//////////////////////////////////////////////////////////////////////////////////////////
+特定属性选择类型
+[lang|="en"] {color: red;}		//这个规则会选择 lang 属性等于 en 或以 en- 开头的所有元素。
+因此，以下示例标记中的前三个元素将被选中，而不会选择后两个元素.
+<p lang="en">Hello!</p>
+<p lang="en-us">Greetings!</p>
+<p lang="en-au">G'day!</p>
+<p lang="fr">Bonjour!</p>
+<p lang="cy-en">Jrooana!</p>
+
+
+假设一个 HTML 文档中有一系列图片，其中每个图片的文件名都形如 figure-1.jpg 和 figure-2.jpg。
+就可以使用以下选择器匹配所有这些图像：
+img[src|="figure"] {border: 1px solid gray;}
+
+/////////////////////////////////////////////////////////////////////////////////////////////
+
+
+
+
+
+
+
+
+
+
+
+/////////////////////////////////////////////////////////////////////////////////////////////
+2D
+div
+{transform: rotate(30deg);}		//旋转30°。通过 rotate() 方法，元素顺时针旋转给定的角度。允许负值，元素将逆时针旋转。
+
+
+div
+{transform: translate(50px,100px);}	//移动到指定坐标
+
+div
+{transform: scale(2,4);}		//值 scale(2,4) 把宽度转换为原始尺寸的 2 倍，把高度转换为原始高度的 4 倍。
+
+
+div
+{transform: skew(30deg,20deg);}		//值 skew(30deg,20deg) 围绕 X 轴把元素翻转 30 度，围绕 Y 轴翻转 20 度。
+
+matrix(n,n,n,n,n,n) 	定义 2D 转换，使用六个值的矩阵。
+translate(x,y) 	定义 2D 转换，沿着 X 和 Y 轴移动元素。
+translateX(n) 	定义 2D 转换，沿着 X 轴移动元素。
+translateY(n) 	定义 2D 转换，沿着 Y 轴移动元素。
+scale(x,y) 	定义 2D 缩放转换，改变元素的宽度和高度。
+scaleX(n) 	定义 2D 缩放转换，改变元素的宽度。
+scaleY(n) 	定义 2D 缩放转换，改变元素的高度。
+rotate(angle) 	定义 2D 旋转，在参数中规定角度。
+skew(x-angle,y-angle) 	定义 2D 倾斜转换，沿着 X 和 Y 轴。
+skewX(angle) 	定义 2D 倾斜转换，沿着 X 轴。
+skewY(angle) 	定义 2D 倾斜转换，沿着 Y 轴。
+
+
+
+3D
+div
+{transform: rotateX(120deg);}	通过 rotateX() 方法，元素围绕其 X 轴以给定的度数进行旋转。
+{transform: rotateY(120deg);}	通过 rotateY() 方法，元素围绕其 Y 轴以给定的度数进行旋转。
+
+
+
+transform-origin: x-axis y-axis z-axis;定义视图被置于 X ,Y,Z轴的何处。可能的值
+   X:
+    left
+    center
+    right
+    length
+    %
+
+   Y:
+    top
+    center
+    bottom
+    length
+    %
+   Z:
+    length
+
+
+div
+{transform-style: preserve-3d;}		//使被转换的子元素保留其 3D 转换
+flat子元素不保留其 3D 转换
+
+
+
+perspective 属性定义 3D 元素距视图的距离，以像素计。该属性允许您改变 3D 元素查看 3D 元素的视图。
+当为元素定义 perspective 属性时，其子元素会获得透视效果，而不是元素本身。
+与 perspective-origin 属性一同使用该属性，这样您就能够改变 3D 元素的底部位置。
+perspective: number|none;
+
+
+backface-visibility: visible|hidden;
+backface-visibility 属性定义当元素不面向屏幕时是否可见。
+如果在旋转元素不希望看到其背面时，该属性很有用。
+
+
+translate3d(x,y,z) 	定义 3D 转化。
+translateX(x) 	定义 3D 转化，仅使用用于 X 轴的值。
+translateY(y) 	定义 3D 转化，仅使用用于 Y 轴的值。
+translateZ(z) 	定义 3D 转化，仅使用用于 Z 轴的值。
+scale3d(x,y,z) 	定义 3D 缩放转换。
+scaleX(x) 	定义 3D 缩放转换，通过给定一个 X 轴的值。
+scaleY(y) 	定义 3D 缩放转换，通过给定一个 Y 轴的值。
+scaleZ(z) 	定义 3D 缩放转换，通过给定一个 Z 轴的值。
+rotate3d(x,y,z,angle) 	定义 3D 旋转。
+rotateX(angle) 	定义沿 X 轴的 3D 旋转。
+rotateY(angle) 	定义沿 Y 轴的 3D 旋转。
+rotateZ(angle) 	定义沿 Z 轴的 3D 旋转。
+perspective(n) 	定义 3D 转换元素的透视视图。
+
+
+z-index=-1；
+z-index=0;
+z-index=1;			覆盖（图片在文字下面或者上面）
+
+
+过渡效果
+div
+{
+width:100px;
+height:100px;
+background:yellow;
+transition:width 2s;		//
+}
+
+div:hover
+{width:300px;}
+
+
+transition-property 	规定应用过渡的 CSS 属性的名称。 	
+transition-duration 	定义过渡效果花费的时间。默认是 0。 	
+transition-timing-function 	规定过渡效果的时间曲线。默认是 "ease"。 	
+transition-delay 	规定过渡效果何时开始。默认是 0。 	等待几秒
+
+
+
+div
+{transition: width 1s linear 2s;}		//简写
+////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+属性选择器：
+比如：input[type]{background: blue; }
+
+
+<h1>以下文字链接可以应用样式：</h1>
+<h2 title="Hello world">Hello world</h2>
+<a title="baidu" href="http://www.baidu.com">baidu</a>
+<h1>以下文字链接无法应用样式：</h1>
+<h2>Hello world</h2>
+<a href="www.baidu.com">baidu</a>
+
+
+属性和值选择器
+[title=baidu]
+{
+color:red;
+}
+///////////////////////////////////////////////////////////////////////////////////////////////////////////
+a:link {color: #FF0000}		/* 未访问的链接 */
+a:visited {color: #00FF00}	/* 已访问的链接 */
+a:hover {color: #FF00FF}	/* 鼠标移动到链接上 */
+a:active {color: #0000FF}	/* 选定的链接 */
+
+
+first-child 伪类
+:first-child伪类来选择元素的第一个子元素。
+
+p:first-child {font-weight: bold;}		//选择以p作为第一个子元素
+li:first-child {text-transform:uppercase;}
+第一个规则将作为某元素第一个子元素的所有 p 元素设置为粗体。
+第二个规则将作为某个元素（在 HTML 中，这肯定是 ol 或 ul 元素）第一个子元素的所有 li 元素变成大写。 
+注意：最常见的错误是认为 p:first-child 之类的选择器会选择 p 元素的第一个子元素。
+
+
+
+first-line 伪元素
+浏览器会根据 "first-line" 伪元素中的样式对 p 元素的第一行文本设置样式：
+p:first-line
+  {
+  color:#ff0000;
+  font-variant:small-caps;
+  }
+  
+  
+  
+  
+ p:first-letter"伪元素用于向文本的首字母设置特殊样式：p:first-letter
+  {
+  color:#ff0000;
+  font-size:xx-large;
+  }
+  
+  
+  
+  伪元素可以与 CSS 类配合使用：
+  p.article:first-letter
+  {
+  color: #FF0000;
+  }
+<p class="article">This is a paragraph in an article。</p>
+
+
+
+:before 伪元素
+:after 伪元素
+
+在每个<h1>元素前面插入一幅图片：
+h1:before
+  {
+  content:url(logo.gif);
+  }
+  
+  
+  在每个<h1>元素后面插入一幅图片：
+h1:after
+  {
+  content:url(logo.gif);
+  }
+  
+  
+//////////////////////////////////////////////////////////////////////////////////////////////////////////
+通过 background-attachment 属性可防止图片随着滚动条滚动。 
+通过这个属性，可以声明图像相对于可视区是固定的（fixed），因此不会受到滚动的影响。
+
+body 
+  {
+  background-image:url(/i/bg_01.gif);
+  background-repeat:no-repeat;
+  background-attachment:fixed
+  }
+background-attachment 属性的默认值是 scroll，也就是说，在默认的情况下，背景会随文档滚动。
+
+///////////////////////////////////////////////////////////////////////////////////////////////////
+CSS对齐
+将左和右外边距设置为 "auto"，来对齐块元素
+.center
+{
+margin-left:auto;
+margin-right:auto;
+width:70%;
+}
+//////////////////////////////////////////////////////////////////////////////////////////////////
+HTML特殊符号
+
+
+特殊符号：
+&nbsp; ---->空格
+&gt; --->大于号
+&lt；--->小于号
+&quot；--->引号
+&copy;-->版权号
+//////////////////////////////////////////////////////////////////////////////////////////////////////
+marquee标签
+可以创建一个内容滚动效果
+<marquee direction="down" loop="4" onmouseover=this.stop() onmouseout=this.start()></marquee>
+direction 表示滚动方向，取值有（left,right,up,down,默认left）
+loop表示滚动循环的次数，默认为无限循环
+onmouseover=this.stop()  onmouseover=this.start()  scrollamout="1"(滚动速度)
+表示当鼠标移上区域的时候停止滚动，鼠标移开继续滚动
+/////////////////////////////////////////////////////////////////////////////////////////////////////
+
+<textarea cols="???" rows="???">
+//文本域
+</textarea>
+
+
+
+
+
+关于单元格
+<tr>		//行
+<td>		//列
+</td>
+<td>
+</td>
+<td>
+</td>
+<td>
+</td>
+</tr>
+
+border-collapse 属性设置是否将表格边框折叠为单一边框：
+border-collapse:collapse;
+colspan左右合并
+rowspan上下合并
+
+
+
+
+<section> 标签定义文档中的节（section、区段）。比如章节、页眉、页脚或文档中的其他部分。
+
+
+///////////////////////////////////////////////////////////////////////////////////////
+input标签无法嵌套HTML代码，BUTTON 标签可以嵌套HTML代码
+/////////////////////////////////////////////////////////////////////////////////////////
+
+
+
+
+
+
+
+
+

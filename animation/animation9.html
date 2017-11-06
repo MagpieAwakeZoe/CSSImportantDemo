@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>动态翻转动画</title>
+    <style>
+        .outBox{
+            width:200px;
+            height:150px;
+            margin:200px auto 0;
+            overflow:hidden;
+            background-color: red;
+        }
+
+        .out_box img{
+            float:left;
+        }
+
+        #outBox {
+            perspective:600px;
+            transform-style:preserve-3d;
+            animation-name:x-spin;
+            animation-duration:7s;
+            animation-iteration-count:infinite;
+            animation-timing-function:linear;
+        }
+
+        .img_3d,.inBox{
+            transform-style:preserve-3d;
+            animation-iteration-count:infinite;
+            animation-timing-function:linear;
+        }
+
+        #inBox{
+            animation-name:y-spin;
+            animation-duration:5s;
+        }
+        @keyframes y-spin {
+            0%    { transform:rotateY(0deg); }
+            50%   { transform:rotateY(180deg); }
+            100%  { transform:rotateY(360deg); }
+        }
+
+        @keyframes back-y-spin {
+            0%    { transform:rotateY(360deg); }
+            50%   { transform:rotateY(180deg); }
+            100%  { transform:rotateY(0deg); }
+        }
+
+    </style>
+
+</head>
+<body>
+<div id="outBox" class="outBox">
+    <div id="inBox" class="inBox">
+        <img class="img_3d" src="http://image.zhangxinxu.com/image/study/p/s200/ps6.jpg" alt="">
+    </div>
+</div>
+</body>
+</html>

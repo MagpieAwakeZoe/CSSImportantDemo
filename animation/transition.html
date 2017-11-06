@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>transition的使用</title>
+    <style>
+        .trans {
+            transition-property: background-color;
+            transition-duration: 3s;
+            transition-timing-function: ease;
+            transition-delay: 0.3s;
+
+
+        }
+        .trans:hover {
+            background-color: #486AAA;
+            color: #fff;
+        }
+    </style>
+</head>
+<body>
+<!--transition的一些属性-->
+<!--transition是一个过渡属性-->
+<!--transition-property :* //指定过渡的性质，比如transition-property:backgrond 就是指backgound参与这个过渡，none 值表示没有变化。 all 值表示所有可以动画演示的属性都可以触发动画效果。否则，只有指定的属性值方式变化才能触发动画效果。-->
+<!--transition-duration:*//指定这个过渡的持续时间-->
+<!--transition-delay:* //延迟过渡时间-->
+<!--transition-timing-function:*//指定过渡类型，有ease | linear | ease-in | ease-out | ease-in-out | cubic-bezier-->
+<a href="/" class="trans">经过我~~</a>
+</body>
+</html>

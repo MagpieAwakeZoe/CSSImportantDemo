@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        @keyframes resize {
+            0% {
+                padding: 0;
+            }
+            50% {
+                padding: 0 20px;
+                background-color:rgba(190, 206, 235, 0.2);
+            }
+            100% {
+                padding: 0 100px;
+                background-color:rgba(190, 206, 235, 0.9);
+            }
+        }
+
+        .anim_box:hover {
+            animation-name: resize;
+            animation-duration: 1.5s;
+            animation-iteration-count: 4;
+            animation-direction: alternate;
+            animation-timing-function: ease-in-out;
+        }
+    </style>
+</head>
+<body>
+<!--     值	              &            描述-->
+<!--animation-name	规定需要绑定到选择器的 keyframe 名称。。-->
+<!--animation-duration	规定完成动画所花费的时间，以秒或毫秒计。-->
+<!--animation-timing-function	规定动画的速度曲线。-->
+<!--animation-delay	规定在动画开始之前的延迟。-->
+<!--animation-iteration-count	规定动画应该播放的次数。-->
+<!--animation-direction	规定是否应该轮流反向播放动画。-->
+<div class="anim_box test_box"></div>
+</body>
+</html>

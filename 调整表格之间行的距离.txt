@@ -1,0 +1,9 @@
+    table {
+            border-collapse: collapse;
+        }
+        td {
+            padding: 0.3em 1em;
+        }
+
+
+cellspacing已经弃用了

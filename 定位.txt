@@ -1,0 +1,9 @@
+relative相对于原来正常位置定位
+absolute相对于整个页面定位
+
+relative和absolute都是把元素浮出页面竖直上方，不同的是，relative是仍在
+页面保留占位，也就是不影响其它元素的位置，而absolute不再页面保留占位，
+所以对页面的其它元素位置有影响
+
+
+position的默认值是static
