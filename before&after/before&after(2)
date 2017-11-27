@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>悬浮方括号效果</title>
+    <style>
+        a {
+            position: relative;
+            display: inline-block;
+            outline: none;
+            text-decoration: none;
+            color: #000;
+            font-size: 32px;
+            padding: 5px 10px;
+        }
+
+        a:hover::before, a:hover::after { position: absolute; }
+        a:hover::before { content: "\5B"; left: -20px; }
+        a:hover::after { content: "\5D"; right:  -20px; }
+    </style>
+</head>
+<body>
+<div style="margin-left: 50px"><a href="#">do you like what you see?</a></div>
+</body>
+</html>
